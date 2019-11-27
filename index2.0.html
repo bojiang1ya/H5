@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>北斗星</title>
+		<meta name="viewport" id="viewport" content="width=320,initial-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--在iPhone 手机上禁止了把数字转化为拨号链接-->
+		<meta content="telephone=no" name="format-detection" />
+		<!--删除默认的苹果工具栏和菜单栏-->
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<!-- 网站开启对web app程序的支持，在web app应用下状态条（屏幕顶部条）的颜色，默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/style2.0.css"/>
+		<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="js/wow.js"></script>
+
+		<script>
+			//计算viewport缩放比例
+			window.eqxVersion = "496a05f",
+				function() {
+					function e() {
+						return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobi|mobile|incognito|webmate|bada|nokia|lg|ucweb|skyfire|micromessenger/i.test(navigator.userAgent) || window.innerWidth < 500
+					}
+
+					function i() {
+						var e = 1,
+							i = document.documentElement.clientWidth || 320,
+							n = document.documentElement.clientHeight || 486;
+						e = i / n >= 320 / 486 ? n / 486 : i / 320;
+						var o = "width=320, initial-scale=" + e + ", maximum-scale=" + e + ", user-scalable=no";
+						document.getElementById("viewport").setAttribute("content", o)
+					}
+					e() && i()
+				}()
+		</script>
+	</head>
+
+	<body>
+		<!--loading-->
+		<div class="loading is-animate style1">
+			<div>L</div>
+			<div>o</div>
+			<div>a</div>
+			<div>d</div>
+			<div>i</div>
+			<div>n</div>
+			<div>g</div>
+			<div>.</div>
+			<div>.</div>
+			<div>.</div>
+		</div>
+
+		<div class="container">
+
+			<div class="section1-wrapper">
+				<div class="section section1">
+					<img class="xingyun" src="images/xingyun.png" />
+					<div class="text-box1">
+						<p>中国近视人口近<strong>6亿...</strong></p>
+						<p>近视率达到<strong>50%</strong>，平均每两人就有一名近视患者...</p>
+						<p>青少年近视率更是居世界第一</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="section2-wrapper">
+				<div class="section section2">
+					<div class="section2-box">
+						<div class="section2-top">
+							<img class="quan1" src="images/quan1.png" />
+							<img class="quan2" src="images/quan2.png" />
+							<img class="quan3" src="images/quan3.png" />
+							<img class="quan4" src="images/quan4.png" />
+							<canvas id="Mycanvs" width="50px" height="50px"></canvas>
+							<img class="eyes" src="images/quan7.png" />
+							<p class="percent">100%</p>
+							<img class="run-rote" src="images/run-rote.png" />
+							<img class="quan5 quan5-1" src="images/quan5.png" />
+							<img class="quan5 quan5-2" src="images/quan5.png" />
+							<img class="quan5 quan5-3" src="images/quan5.png" />
+							<img class="quan5 quan5-4" src="images/quan5.png" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-box2">
+				<p>若不加以控制</p>
+				<p>任由<strong>近视</strong>持续加深</p>
+				<p>世界将逐渐模糊不清，一片混沌</p>
+				<p>拯救眼健康刻不容缓</p>
+			</div>
+
+			<div class="section3-wrapper">
+				<div class="section section3">
+					<div class="section3-box">
+						<p>北斗星向所有眼镜人发起使命召唤</p>
+						<p>加入守护者联盟 开启<strong>守护100万计划</strong></p>
+						<p>共同守护身边每个人的眼健康</p>
+						<p>光明等待开启</p>
+					</div>
+					<a href="" class="goTo">
+						<img src="images/button-border.png" />
+						<p>一起加入联盟吧！</p>
+					</a>
+				</div>
+				<img class="dipan" src="images/dipan.png" />
+			</div>
+		</div>
+
+		<script>
+			var reduce=-0.5; //初始圆环开始位置
+			document.onreadystatechange = loadingChange; //当页面加载状态改变的时候执行这个方法.
+			$('.section1-wrapper').css('z-index','66');
+			$('.section2-wrapper,.text-box2,.section3-wrapper,.section3').css('z-index','-1');
+			function loadingChange() {
+				if(document.readyState == "complete") { //当页面加载状态为完全结束时进入 
+					$('.loading').fadeOut(290);
+						$('.xingyun').addClass('xuanzhuan');
+						setTimeout(function () {
+							$('.text-box1 p:first-child').addClass('fadeIn');
+							setTimeout(function () {
+								$('.text-box1 p:first-child').css('opacity','1');
+								$('.text-box1 p:nth-child(2)').addClass('fadeIn');
+								setTimeout(function () {
+									$('.text-box1 p:nth-child(2)').css('opacity','1');
+									$('.text-box1 p:nth-child(3)').addClass('fadeIn');
+									setTimeout(function () {
+										$('.text-box1 p:nth-child(3)').css('opacity','1');
+										setTimeout(function () {
+											$('.section1-wrapper').addClass('sectionOut');
+											setTimeout(function () {
+												$('.section1-wrapper').remove();
+												$('.section2-wrapper,.text-box2').css({'z-index':'33','opacity':'1'});
+												$('.section2').addClass('fadeIn2');
+												$('.quan1').addClass('zoomInBig');
+												$('.quan2,.quan3,.quan4').addClass('zoomInSmall');
+												$('#Mycanvs,.eyes').addClass('fadeIn3');
+												$('.run-rote').addClass('runRote');
+												$('.percent').addClass('fadeIn');
+												$('.quan5-1').addClass('slideInDown');
+												$('.quan5-2').addClass('slideInUp');
+												$('.quan5-3').addClass('slideInLeft');
+												$('.quan5-4').addClass('slideInRight');
+												setTimeout(function () {
+													$('#Mycanvs,.eyes').css('opacity','1');
+													$('.percent').html('75%');
+													var clock=setInterval(function () {
+														reduce+=0.01;
+														if (reduce>1.5) {
+															clearInterval(clock);
+															return false;
+														}else{
+															changCircle(reduce)
+														}
+													},20)
+													setTimeout(function () {
+														$('.percent').html('50%');
+														setTimeout(function () {
+															$('.percent').html('25%');
+															setTimeout(function () {
+																$('.percent').html('0%');
+															},1000)
+														},1000)
+													},1000)
+													$('.section2-wrapper').addClass('sectionOut2');
+													$('.text-box2 p:first-child').addClass('fadeIn');
+													setTimeout(function () {
+														$('.text-box2 p:first-child').css('opacity','1');
+														$('.text-box2 p:nth-child(2)').addClass('fadeIn');
+														setTimeout(function () {
+															$('.text-box2 p:nth-child(2)').css('opacity','1');
+															$('.text-box2 p:nth-child(3)').addClass('fadeIn');
+															setTimeout(function () {
+																$('.text-box2 p:nth-child(3)').css('opacity','1');
+																$('.text-box2 p:nth-child(4)').addClass('fadeIn');
+																setTimeout(function () {
+																	$('.text-box2 p:nth-child(4)').css('opacity','1');
+																	setTimeout(function () {
+																		$('.text-box2').addClass('sectionOut3');
+																		setTimeout(function () {
+																			$('.text-box2').remove();
+																			setTimeout(function () {
+																				$('.section3-wrapper').css({'z-index':'33','opacity':'1'});
+																				$('.dipan').addClass('fadeIn');
+																				setTimeout(function () {
+																					$('.section3-box p:first-child').addClass('fadeIn');
+																					setTimeout(function () {
+																						$('.section3-box p:first-child').css('opacity','1');
+																						$('.section3-box p:nth-child(2)').addClass('fadeIn');
+																						setTimeout(function () {
+																							$('.section3-box p:nth-child(2)').css('opacity','1');
+																						    $('.section3-box p:nth-child(3)').addClass('fadeIn');
+																						    setTimeout(function () {
+																								$('.section3-box p:nth-child(3)').css('opacity','1');
+																						    	$('.section3-box p:nth-child(4)').addClass('fadeIn');
+																						    	setTimeout(function () {
+																						    		$('.section3-box p:nth-child(4)').css('opacity','1');
+																					    			$('.goTo img').addClass('fadeIn');
+																					    			setTimeout(function () {
+																					    				$('.goTo img').css('opacity','1');
+																					    				$('.goTo p').addClass('bounceIn');
+																					    				setTimeout(function () {
+																					    					$('.goTo p').css('opacity','1');
+																					    					$('.goTo').addClass('huxi');
+																					    				},950)
+																					    			},950)
+																						    	},950)
+																							},950)
+																						},950)
+																					},950)
+																				},950)
+																			},950)
+																		},1950)
+																	},1950)
+																},950)
+															},950)
+														},950)
+													},950)
+													setTimeout(function () {
+														$('.section2-wrapper').remove()
+													},3950)
+												},2950)
+											},2450)
+										},1450)
+									},950)
+								},950)
+							},950)
+						},300)
+						
+						//默认先画圆
+						function changCircle(reduce) {
+							var c=document.getElementById('Mycanvs');
+							if (c==null) {
+								return false;
+							}else{
+								var ctx=c.getContext('2d');
+								ctx.clearRect(0,0,50,50);
+								ctx.beginPath();
+						        ctx.arc(25,25,20, reduce*Math.PI , Math.PI * 1.5, false);  
+						        ctx.lineWidth=5;
+						        var linearGradient2 = ctx.createLinearGradient(50,0,0,50);
+								linearGradient2.addColorStop(0 ,'rgb(52,193,221)');
+								linearGradient2.addColorStop(0.5,'rgb(26,117,178)');
+								linearGradient2.addColorStop(1,'rgb(28,121,181)');
+						        ctx.strokeStyle=linearGradient2;
+								ctx.stroke();
+							}
+						}
+						changCircle(reduce);
+				}	
+			}
+		</script>
+
+	</body>
+
+</html>
